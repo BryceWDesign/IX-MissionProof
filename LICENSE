@@ -1,0 +1,556 @@
+IX-MissionProof Source-Available Evaluation License v1.0
+
+Copyright (c) 2026 Bryce Lovell. All rights reserved.
+
+This license governs the IX-MissionProof software, source code, documentation,
+tests, examples, schemas, contracts, policies, workflows, configuration files,
+evidence models, authority models, cognition models, memory models, simulation
+models, autonomy-assurance models, abuse-defense models, generated artifacts,
+project materials, and related repository content published with this license,
+except for third-party components that are expressly identified and governed by
+their own license terms.
+
+This is not an Open Source license. IX-MissionProof is source-available solely
+under the limited evaluation rights stated below.
+
+1. PURPOSE
+
+IX-MissionProof is made source-available so that interested individuals may
+inspect its technical structure and perform limited personal, noncommercial,
+non-operational evaluation before contacting the Licensor regarding a separate
+commercial, production, hosted, government, regulated, funded, derivative, or
+operational license.
+
+This License does not grant permission for commercial use, production use,
+operational use, hosted use, redistribution, modification, derivative works,
+funded use, organizational use, procurement use, contractor use, government
+use, regulated use, model-facing use, customer-facing use, mission-facing use,
+or any activity intended to create revenue, business value, strategic value,
+procurement advantage, operational advantage, or deployed capability.
+
+2. DEFINITIONS
+
+"Software" means IX-MissionProof and all source code, documentation, tests,
+examples, schemas, contracts, policies, workflows, configuration files,
+interfaces, command-line tools, application programming interfaces, data
+models, evidence models, authority models, governance logic, cognition logic,
+memory logic, simulation logic, execution logic, assurance-case logic,
+abuse-defense logic, generated artifacts, reports, project materials, and other
+repository content distributed with or referencing this License.
+
+"Licensor" means Bryce Lovell.
+
+"You" or "Licensee" means the individual or legal entity accessing, viewing,
+cloning, downloading, copying, evaluating, running, testing, or otherwise
+interacting with the Software.
+
+"Evaluation Use" means limited personal review, inspection, study, or local
+testing of the unmodified Software solely to understand its architecture,
+behavior, capabilities, limitations, technical fit, or potential licensing
+value.
+
+Evaluation Use does not include Commercial Use, Operational Use, Production
+Use, Hosted Use, Government Use, Regulated Use, Funded Use, Model-Facing Use,
+Customer-Facing Use, Mission-Facing Use, modification, creation of Derivative
+Works, redistribution, integration, procurement activity, or work performed
+for the benefit of an employer, client, customer, agency, program, contract,
+institution, investor, or other third party.
+
+"Commercial Use" means any access, evaluation, testing, demonstration,
+integration, modification, deployment, distribution, or other activity
+involving the Software that is connected directly or indirectly to revenue,
+compensation, paid work, consulting, contracting, procurement, product
+development, service delivery, resale, investment activity, fundraising,
+business operations, competitive advantage, institutional advantage, or work
+performed for or on behalf of any organization.
+
+"Operational Use" means any use of the Software, in whole or in part, to
+support, automate, influence, evaluate, validate, document, approve, reject,
+monitor, test, control, secure, govern, operate, or provide evidence for any
+real system, model, agent, workflow, product, service, program, mission,
+engineering process, procurement process, compliance process, safety process,
+security process, customer engagement, or decision pipeline.
+
+"Production Use" means any use of the Software in a live, deployed,
+production-like, customer-facing, employee-facing, business-facing,
+mission-facing, government-facing, regulated, safety-relevant,
+security-relevant, or consequential decision-support environment.
+
+"Hosted Use" means making the Software, a modified version of the Software, a
+Derivative Work, or a system incorporating or informed by the Software
+available to another person or entity over a network, including as a service,
+application programming interface, web application, internal platform,
+managed service, hosted agent, hosted runtime, cloud-accessible tool, or
+software-as-a-service offering.
+
+"Government Use" means use by, for, funded by, sponsored by, or performed on
+behalf of any government, military, defense, intelligence, law-enforcement,
+public-sector, public-administration, government contractor, prime contractor,
+subcontractor, systems integrator, federally funded research and development
+center, national laboratory, public university program, or government-related
+organization, contract, grant, procurement, pilot, or mission.
+
+"Regulated Use" means use in or for any regulated, safety-relevant,
+security-relevant, rights-affecting, or consequential domain, including
+defense, intelligence, aerospace, autonomy, transportation, healthcare,
+medicine, pharmaceuticals, finance, banking, insurance, legal services,
+energy, utilities, critical infrastructure, communications, education,
+employment, housing, public benefits, public safety, law enforcement, or
+public-sector decision-making.
+
+"Funded Use" means any use, evaluation, testing, development, research,
+integration, demonstration, or other activity supported directly or indirectly
+by compensation, employment, investment, grant funding, sponsorship,
+procurement funding, contract funding, institutional funding, government
+funding, customer funding, or another source of financial or in-kind support.
+
+"Model-Facing Use" means connecting, exposing, integrating, or applying the
+Software to any live, hosted, remote, local, commercial, institutional,
+government, frontier, foundation, generative, predictive, agentic, or
+autonomous artificial-intelligence model or model-serving system, except for
+deterministic fixtures, mocks, simulators, and static examples included in the
+unmodified Software solely for permitted Evaluation Use.
+
+"Customer-Facing Use" means any use in which the Software, its output, its
+artifacts, or a system incorporating or derived from it is made available to,
+used for, or relied upon by a customer, client, user, partner, program,
+beneficiary, or other third party.
+
+"Mission-Facing Use" means any use in which the Software, its output, its
+artifacts, or a system incorporating or derived from it could support,
+influence, evaluate, authorize, constrain, document, or affect a real mission,
+operation, deployment, safety decision, security decision, engineering
+decision, acquisition decision, or consequential action.
+
+"Modification" means any edit, adaptation, translation, transformation,
+conversion, extension, refactor, port, merge, extraction, rearrangement,
+annotation, optimization, reimplementation, or other alteration of the
+Software.
+
+"Derivative Work" means any modification, adaptation, extension, translation,
+port, rewrite, reimplementation, fork, wrapper, integration, service, product,
+platform, model system, agent system, runtime, policy system, evidence system,
+assurance system, governance system, or other work based on, derived from,
+incorporating, or containing protectable expression from the Software.
+
+"Consequential Action" means an action, recommendation, approval, rejection,
+restriction, escalation, execution, deployment, publication, memory update,
+code change, safety decision, security decision, autonomy decision, or other
+outcome that could materially affect a person, organization, system, mission,
+asset, environment, legal interest, financial interest, safety interest, or
+security interest.
+
+3. GRANT OF LIMITED EVALUATION RIGHTS
+
+Subject to complete compliance with this License, the Licensor grants You a
+limited, revocable, non-exclusive, non-transferable, non-sublicensable right to:
+
+(a) view and inspect the Software;
+
+(b) clone or download the Software solely for personal, noncommercial,
+non-operational Evaluation Use;
+
+(c) run the unmodified Software locally solely for personal, noncommercial,
+non-operational Evaluation Use;
+
+(d) inspect the Software's architecture, tests, examples, schemas,
+documentation, included deterministic fixtures, and included simulated
+behavior; and
+
+(e) share a link to the original public IX-MissionProof repository.
+
+These rights do not include any right to modify, redistribute, integrate,
+deploy, host, commercialize, operationalize, or create Derivative Works from
+the Software.
+
+All permissions granted by this section are limited, conditional, revocable
+upon breach, and subject to all restrictions in this License.
+
+No rights are granted except those expressly stated.
+
+4. PROHIBITED USES
+
+Without prior written permission from the Licensor under a separate written
+license agreement, You may not:
+
+(a) use the Software for any Commercial Use;
+
+(b) use the Software for any Operational Use;
+
+(c) use the Software for any Production Use;
+
+(d) use the Software for any Hosted Use;
+
+(e) use the Software for any Government Use;
+
+(f) use the Software for any Regulated Use;
+
+(g) use the Software for any Funded Use;
+
+(h) use the Software for any Model-Facing Use other than the deterministic
+fixtures, mocks, simulators, and static examples included in the unmodified
+Software for permitted Evaluation Use;
+
+(i) use the Software for any Customer-Facing Use;
+
+(j) use the Software for any Mission-Facing Use;
+
+(k) modify the Software;
+
+(l) create, commission, assist with, publish, distribute, host, commercialize,
+deploy, operate, or use any Derivative Work;
+
+(m) reproduce, redistribute, sublicense, sell, rent, lease, lend, publish,
+mirror, rehost, package, transmit, provide, or otherwise make the Software or
+any substantial portion of it available to another person or entity;
+
+(n) integrate the Software into another repository, product, service, internal
+tool, hosted service, model gateway, agent gateway, security platform,
+governance platform, compliance platform, assurance platform, workflow,
+pipeline, toolchain, runtime, evaluation system, engineering system,
+procurement system, or decision system;
+
+(o) use the Software to provide consulting, contracting, implementation,
+integration, testing, red-team, evaluation, assurance, audit, certification,
+compliance, governance, DevSecOps, developer-tooling, AI-safety,
+AI-governance, AI-assurance, cybersecurity, autonomy, defense, intelligence,
+aerospace, safety, or engineering services;
+
+(p) use the Software for or on behalf of a company, employer, institution,
+agency, government entity, military organization, defense contractor, prime
+contractor, subcontractor, systems integrator, research organization, funded
+program, procurement effort, client, customer, partner, investor, or other
+organization;
+
+(q) use the Software to train, fine-tune, distill, align, benchmark, evaluate,
+compare, improve, monitor, moderate, guard, secure, validate, red-team, operate,
+or provide evidence for any model, agent, automated repair system, development
+tool, autonomy system, commercial product, procurement artifact, proposal,
+white paper, internal roadmap, deployed gateway, or competing implementation;
+
+(r) use the Software or its protectable expression to develop, reproduce,
+reimplement, validate, compare, improve, or operate a competing product,
+service, framework, agent system, governance system, evidence system,
+assurance system, autonomy runtime, coding-agent control plane, or AI
+evaluation platform;
+
+(s) use the Software to create or support a representation that an AI system,
+agent, model, autonomous system, software system, organization, process, or
+mission is certified, approved, safe, secure, compliant, trustworthy,
+production-ready, procurement-ready, deployment-ready, mission-ready, or
+independently validated;
+
+(t) represent the Software as making unsafe behavior, incorrect reasoning,
+unsupported claims, hallucination, deception, jailbreaks, abuse, security
+failures, autonomy failures, governance failures, compliance failures, or
+operational failures impossible;
+
+(u) use the Software to develop, improve, automate, conceal, coordinate,
+operationalize, or facilitate jailbreaks, prompt-decomposition attacks,
+policy-bypass methods, adversarial campaigns, malicious model use, credential
+misuse, unauthorized surveillance, data theft, malware, destructive activity,
+evasion, offensive cyber operations, or other unlawful or harmful activity;
+
+(v) remove, obscure, alter, disable, or misrepresent any copyright notice,
+license notice, attribution notice, provenance notice, evidence boundary,
+claim boundary, safety boundary, authority boundary, or authorship
+information;
+
+(w) claim ownership of the Software or any portion of the Software;
+
+(x) represent the Software as Open Source software;
+
+(y) imply endorsement, sponsorship, affiliation, partnership, approval,
+certification, procurement status, production readiness, government approval,
+or an official relationship with Bryce Lovell or IX-MissionProof;
+
+(z) use the Software in any manner that violates applicable law, regulation,
+court order, contractual obligation, export-control obligation,
+confidentiality obligation, platform policy, model-provider policy, or
+third-party right; or
+
+(aa) attempt to circumvent the purpose or restrictions of this License by
+using contractors, affiliates, subsidiaries, customers, vendors, integrators,
+agents, automated systems, intermediaries, or other third parties to perform
+restricted activity.
+
+5. COMMERCIAL AND OPERATIONAL LICENSING
+
+Commercial, production, hosted, resale, redistribution, modification,
+derivative, government, agency, military, defense-contractor,
+systems-integrator, procurement, pilot, funded-evaluation,
+organization-backed, regulated, model-facing, customer-facing,
+mission-facing, security, compliance, assurance, autonomy, or operational use
+requires prior written permission and a separate written license agreement
+with the Licensor.
+
+Contact:
+
+Bryce Lovell
+LinkedIn: https://www.linkedin.com/in/brycewdesign/
+
+No commercial, operational, production, hosted, government, regulated, funded,
+derivative, organizational, or other restricted rights are granted unless and
+until a separate written agreement is executed by the Licensor.
+
+6. OWNERSHIP AND RESERVATION OF RIGHTS
+
+The Software is licensed, not sold.
+
+The Licensor retains all right, title, and interest in and to the Software and
+all protectable expression embodied in the Software, including applicable
+copyrights and other intellectual-property rights owned by the Licensor.
+
+All rights not expressly granted by this License are reserved by the Licensor.
+
+No license or right is granted by implication, exhaustion, estoppel, waiver,
+course of dealing, or otherwise.
+
+No patent rights are granted under this License. Any patent license must be
+expressly stated in a separate written agreement executed by the Licensor.
+
+This License does not grant any right to use a trade name, trademark, service
+mark, logo, project name, product name, brand, domain name, social-media
+handle, or other identifier associated with Bryce Lovell or IX-MissionProof.
+
+7. DERIVATIVE WORKS AND INTEGRATIONS
+
+You may not create, publish, distribute, host, commercialize, deploy, operate,
+or otherwise use a Derivative Work or integration without prior written
+permission from the Licensor under a separate written license agreement.
+
+Local Evaluation Use does not authorize You to modify the Software or
+incorporate it into another repository, product, service, workflow, platform,
+model, agent, toolchain, or runtime.
+
+No ownership interest in an unauthorized Derivative Work or integration is
+granted or recognized by this License.
+
+Nothing in this section limits rights that a third-party license independently
+grants in a separately identified third-party component.
+
+8. THIRD-PARTY COMPONENTS
+
+The Software may contain, reference, interface with, or operate alongside
+third-party software, libraries, tools, runtimes, models, services, data, or
+other materials.
+
+Separately identified third-party components remain governed by their
+respective licenses, notices, terms, and restrictions.
+
+This License does not alter, replace, expand, restrict, or grant rights under a
+third-party license.
+
+You are solely responsible for identifying and complying with all applicable
+third-party licenses, service terms, model-provider terms, data rights, laws,
+and restrictions.
+
+Where a NOTICE file, dependency manifest, source header, vendored license, or
+other attribution identifies a third-party component, that identification is
+incorporated into this License by reference solely for notice purposes.
+
+9. CONTRIBUTIONS AND SUBMISSIONS
+
+This License does not create an implied contribution agreement.
+
+Unless a separate written contributor agreement executed by the Licensor
+states otherwise, any issue, suggestion, feedback, pull request, patch, code,
+documentation, architecture proposal, policy proposal, schema, test, example,
+attack pattern, red-team material, or other submission does not obligate the
+Licensor to review, use, accept, compensate, credit, license, or maintain that
+submission.
+
+Do not submit confidential, proprietary, classified, export-controlled,
+restricted, employer-owned, customer-owned, government-owned, third-party-owned,
+unlawfully obtained, offensive, exploitative, or unsafe information.
+
+You represent that You possess all rights and permissions necessary for any
+material You submit.
+
+10. AI, AGENT, AUTONOMY, AND ASSURANCE CLAIM BOUNDARY
+
+IX-MissionProof is a research-oriented AI-assurance and authority-control
+prototype.
+
+The Software is not represented as:
+
+(a) artificial general intelligence;
+
+(b) consciousness, sentience, personhood, or an autonomous legal authority;
+
+(c) an independently validated safety, security, governance, compliance, or
+certification system;
+
+(d) a replacement for qualified human judgment, professional review,
+regulatory review, safety engineering, security engineering, legal review,
+acquisition authority, mission authority, or operational command;
+
+(e) proof that any model, agent, autonomous system, software system, workflow,
+organization, or mission is safe, secure, compliant, trustworthy,
+production-ready, procurement-ready, deployment-ready, or mission-ready; or
+
+(f) a guarantee that unsafe, incorrect, deceptive, unauthorized, abusive, or
+harmful behavior will be detected, prevented, contained, or corrected.
+
+Software output is not evidence merely because the Software produced it.
+
+An evidence record is not independently verified proof merely because the
+Software stored, linked, hashed, signed, scored, or displayed it.
+
+A claim is not approved merely because the Software evaluated it.
+
+A passing test is not certification.
+
+A generated assurance case is not regulatory, safety, security, legal,
+procurement, or mission approval.
+
+A simulated outcome is not an observed real-world outcome.
+
+A prediction is not an observation.
+
+A memory record is not truth merely because it was retained.
+
+A model, agent, or autonomous system does not possess authority merely because
+it has capability, produced an output, passed an automated gate, or was assigned
+an automated role.
+
+Human authority remains required for all Consequential Actions and for all
+commercial, production, operational, government, regulated, safety-relevant,
+security-relevant, customer-facing, and mission-facing use.
+
+Independent evidence, qualified review, applicable testing, and authorized
+human decisions remain necessary wherever the circumstances require them.
+
+11. RESEARCH PROTOTYPE STATUS
+
+The Software is experimental and research-oriented.
+
+The Software has not been certified, independently validated, approved for
+production, approved for procurement, approved for operational use, approved
+for government use, approved for regulated use, approved for safety-critical
+use, approved for security-critical use, or approved for mission-facing use.
+
+Repository tests, demonstrations, examples, fixtures, reports, evidence
+bundles, assurance cases, validation results, or passing continuous-integration
+checks establish only the behavior tested under their stated conditions.
+
+They do not establish universal correctness, security, safety, compliance,
+fitness, reliability, operational validity, or suitability for any particular
+purpose.
+
+12. NO PROFESSIONAL ADVICE OR DECISION AUTHORITY
+
+The Software and its outputs do not constitute legal advice, regulatory
+advice, compliance advice, safety certification, security certification,
+financial advice, medical advice, engineering approval, procurement approval,
+mission approval, command authority, or any other professional or official
+decision.
+
+You are responsible for obtaining qualified professional review and authorized
+human approval before relying on any output or artifact in a consequential
+context.
+
+13. NO WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, EXPRESS OR IMPLIED.
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE LICENSOR DISCLAIMS ALL WARRANTIES,
+INCLUDING WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, FITNESS FOR
+A PARTICULAR PURPOSE, ACCURACY, COMPLETENESS, SECURITY, SAFETY, RELIABILITY,
+AVAILABILITY, PERFORMANCE, COMPATIBILITY, COMPLIANCE, OR ERROR-FREE OPERATION.
+
+THE LICENSOR DOES NOT WARRANT THAT THE SOFTWARE WILL BE COMPLETE, CURRENT,
+SECURE, SAFE, RELIABLE, AVAILABLE, UNINTERRUPTED, ERROR-FREE, FREE OF HARMFUL
+COMPONENTS, SUITABLE FOR ANY PURPOSE, OR CAPABLE OF DETECTING OR PREVENTING ANY
+PARTICULAR FAILURE, ATTACK, ABUSE, CLAIM, DECISION, OR OUTCOME.
+
+14. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, BRYCE LOVELL SHALL NOT BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, PUNITIVE,
+OR OTHER DAMAGES ARISING FROM OR RELATED TO THE SOFTWARE, THIS LICENSE, OR ANY
+USE OR INABILITY TO USE THE SOFTWARE.
+
+THIS LIMITATION INCLUDES DAMAGES ASSOCIATED WITH LOST PROFITS, LOST REVENUE,
+LOST DATA, BUSINESS INTERRUPTION, PROCUREMENT LOSS, CONTRACT LOSS,
+OPPORTUNITY LOSS, GOODWILL LOSS, SECURITY INCIDENTS, PRIVACY INCIDENTS,
+COMPLIANCE FAILURES, SAFETY FAILURES, MODEL FAILURES, AGENT FAILURES,
+AUTONOMY FAILURES, GOVERNANCE FAILURES, ASSURANCE FAILURES, EVIDENCE FAILURES,
+MEMORY FAILURES, SIMULATION FAILURES, SOFTWARE FAILURES, OPERATIONAL FAILURES,
+MISSION FAILURES, DECISION FAILURES, PERSONAL INJURY, PROPERTY DAMAGE, OR
+THIRD-PARTY CLAIMS, EVEN IF THE LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY
+OF SUCH DAMAGES.
+
+15. TERMINATION
+
+Any violation of this License automatically terminates all permissions granted
+to You under this License.
+
+Upon termination, You must immediately stop accessing, using, evaluating,
+running, copying, or retaining the Software and must delete all copies in Your
+possession or control, including unauthorized modifications, integrations,
+derivatives, hosted versions, or redistributed copies, except where retention
+is required by applicable law.
+
+Sections concerning ownership, reservation of rights, prohibited uses,
+Derivative Works, third-party components, claim boundaries, disclaimers,
+limitation of liability, termination, and enforcement survive termination.
+
+Termination does not limit any rights, claims, or remedies available to the
+Licensor.
+
+16. GOVERNING TERMS, SEVERABILITY, AND WAIVER
+
+This License is the entire agreement governing Evaluation Use of the Software
+unless superseded by a separate written agreement executed by the Licensor.
+
+If any provision of this License is found invalid or unenforceable, that
+provision shall be interpreted or limited to the minimum extent necessary, and
+the remaining provisions shall remain in effect.
+
+Failure or delay by the Licensor in enforcing any provision does not waive the
+Licensor's right to enforce that provision or any other provision later.
+
+A waiver is effective only if it is in writing and signed by the Licensor.
+
+17. LICENSE SCOPE FOR INITIAL AND FUTURE VERSIONS
+
+Beginning with the first commit or release that includes this License,
+IX-MissionProof is governed by the IX-MissionProof Source-Available Evaluation
+License v1.0 unless a later written license expressly states otherwise.
+
+No Apache-2.0, MIT, BSD, GPL, LGPL, AGPL, MPL, public-domain, Open Source, or
+other license is granted for IX-MissionProof merely because a donor project,
+dependency, earlier work, related repository, or separately identified
+component uses a different license.
+
+This section does not revoke or restrict rights already granted under a valid
+license for a separately distributed prior work or separately identified
+third-party component.
+
+18. PLAIN-LANGUAGE SUMMARY
+
+You may view, download, and locally run the unmodified Software solely for
+personal, noncommercial, non-operational evaluation.
+
+You may not commercially use, modify, redistribute, deploy, host, integrate,
+fund, operationalize, or create Derivative Works from the Software.
+
+You may not use the Software for an organization, employer, customer, client,
+government entity, contractor, procurement effort, funded program, regulated
+domain, production system, live model, autonomous system, customer-facing
+service, or real mission without prior written permission and a separate
+license from Bryce Lovell.
+
+IX-MissionProof does not certify that an AI system, agent, autonomous system,
+software system, organization, workflow, or mission is safe, secure, compliant,
+trustworthy, production-ready, procurement-ready, deployment-ready, or
+mission-ready.
+
+Human authority and independent review remain required for consequential use.
+
+This summary is provided for convenience only. The complete License terms
+control.
+
+END OF LICENSE
