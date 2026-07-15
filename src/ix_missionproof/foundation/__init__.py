@@ -4,6 +4,7 @@ from ix_missionproof.foundation.digests import ContentDigest
 from ix_missionproof.foundation.documents import CanonicalJsonDocument
 from ix_missionproof.foundation.errors import FoundationError
 from ix_missionproof.foundation.identifiers import CanonicalKey, ScopedIdentifier
+from ix_missionproof.foundation.records import RecordEnvelope
 from ix_missionproof.foundation.serialization import (
     JsonArray,
     JsonObject,
@@ -31,6 +32,7 @@ __all__ = [
     "JsonObject",
     "JsonPrimitive",
     "JsonValue",
+    "RecordEnvelope",
     "ScopedIdentifier",
     "UtcTimestamp",
     "canonical_json",
