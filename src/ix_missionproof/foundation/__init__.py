@@ -1,5 +1,11 @@
 """Canonical foundational values used throughout IX-MissionProof."""
 
+from ix_missionproof.foundation.actors import (
+    ActorIdentity,
+    ActorKind,
+    ActorRegistry,
+    ActorStatus,
+)
 from ix_missionproof.foundation.digests import ContentDigest
 from ix_missionproof.foundation.documents import CanonicalJsonDocument
 from ix_missionproof.foundation.errors import FoundationError
@@ -23,6 +29,10 @@ from ix_missionproof.foundation.text import (
 from ix_missionproof.foundation.time import Clock, UtcTimestamp, require_utc, utc_now
 
 __all__ = [
+    "ActorIdentity",
+    "ActorKind",
+    "ActorRegistry",
+    "ActorStatus",
     "CanonicalJsonDocument",
     "CanonicalKey",
     "Clock",
