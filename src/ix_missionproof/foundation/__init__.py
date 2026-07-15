@@ -1,6 +1,7 @@
 """Canonical foundational values used throughout IX-MissionProof."""
 
 from ix_missionproof.foundation.digests import ContentDigest
+from ix_missionproof.foundation.documents import CanonicalJsonDocument
 from ix_missionproof.foundation.errors import FoundationError
 from ix_missionproof.foundation.identifiers import CanonicalKey, ScopedIdentifier
 from ix_missionproof.foundation.serialization import (
@@ -21,6 +22,7 @@ from ix_missionproof.foundation.text import (
 from ix_missionproof.foundation.time import Clock, UtcTimestamp, require_utc, utc_now
 
 __all__ = [
+    "CanonicalJsonDocument",
     "CanonicalKey",
     "Clock",
     "ContentDigest",
