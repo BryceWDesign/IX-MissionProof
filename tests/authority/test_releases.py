@@ -367,13 +367,15 @@ def test_human_approved_release_requires_fresh_authority_state() -> None:
         requires_human_review=True
     )
     release = _issue_release(runtime)
+    decision = runtime.decision
 
+    assert decision is not None
     assert release.release_path is (
         ActionExecutionReleasePath.HUMAN_APPROVAL
     )
     assert release.required_human_approval is True
-    assert release.decision_id == runtime.decision.decision_id
-    assert release.decision_digest == runtime.decision.digest()
+    assert release.decision_id == decision.decision_id
+    assert release.decision_digest == decision.digest()
     assert (
         release.authority_state_digest
         == runtime.authority_state.digest()
