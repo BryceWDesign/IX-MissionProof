@@ -393,7 +393,9 @@ class ActionExecutionReceipt:
         executor = actor_registry.require_actor(
             executed_by_id
         )
-        cls._validate_runtime_executor(executor)
+        executor_owner_id = cls._validate_runtime_executor(
+            executor
+        )
 
         cls._validate_release_binding(
             release=release,
@@ -418,7 +420,7 @@ class ActionExecutionReceipt:
             executed_by_id=executor.actor_id,
             executor_kind=executor.kind,
             executor_accountability_owner_id=(
-                executor.accountability_owner_id
+                executor_owner_id
             ),
             release_id=release.release_id,
             request_id=request.request_id,
@@ -448,7 +450,7 @@ class ActionExecutionReceipt:
     @staticmethod
     def _validate_runtime_executor(
         executor: ActorIdentity,
-    ) -> None:
+    ) -> ScopedIdentifier:
         if not executor.is_active:
             raise FoundationError(
                 "execution requires an active executor"
@@ -457,11 +459,16 @@ class ActionExecutionReceipt:
             raise FoundationError(
                 "execution requires an executable machine actor"
             )
-        if executor.accountability_owner_id is None:
+
+        owner_id = executor.accountability_owner_id
+
+        if owner_id is None:
             raise FoundationError(
                 "execution actor must identify an accountable "
                 "human owner"
             )
+
+        return owner_id
 
     @staticmethod
     def _validate_release_binding(
