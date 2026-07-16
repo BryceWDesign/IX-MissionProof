@@ -1,4 +1,4 @@
-"""Bounded claims, adjudication, posture, alerts, and change detection."""
+"""Bounded claims, adjudication, posture, alerts, and human responses."""
 
 from ix_missionproof.claims.adjudications import (
     ClaimAdjudicationDecision,
@@ -40,6 +40,11 @@ from ix_missionproof.claims.resolutions import (
     ClaimResolutionSource,
     ClaimResolutionStatus,
 )
+from ix_missionproof.claims.responses import (
+    ClaimPostureAlertResponse,
+    ClaimPostureAlertResponseAction,
+    ClaimPostureAlertResponseLedger,
+)
 from ix_missionproof.claims.specifications import (
     ClaimCatalog,
     ClaimCriticality,
@@ -65,6 +70,9 @@ __all__ = [
     "ClaimPostureAlertDocket",
     "ClaimPostureAlertDocketStatus",
     "ClaimPostureAlertReason",
+    "ClaimPostureAlertResponse",
+    "ClaimPostureAlertResponseAction",
+    "ClaimPostureAlertResponseLedger",
     "ClaimPostureAlertSeverity",
     "ClaimPostureDelta",
     "ClaimPostureDeltaSnapshot",
