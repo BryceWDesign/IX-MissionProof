@@ -16,6 +16,12 @@ from ix_missionproof.claims.chains import (
     ClaimPostureAlertLifecycleChainEntry,
     ClaimPostureAlertLifecycleChainStatus,
 )
+from ix_missionproof.claims.checkpoint_reviews import (
+    ClaimPostureAlertLifecycleReviewDocket,
+    ClaimPostureAlertLifecycleReviewDocketStatus,
+    ClaimPostureAlertLifecycleReviewPriority,
+    ClaimPostureAlertLifecycleReviewReason,
+)
 from ix_missionproof.claims.checkpoint_states import (
     ClaimPostureAlertLifecycleCheckpointCurrencySnapshot,
     ClaimPostureAlertLifecycleCheckpointCurrencyStatus,
@@ -114,6 +120,10 @@ __all__ = [
     "ClaimPostureAlertLifecycleCheckpointCurrencyStatus",
     "ClaimPostureAlertLifecycleCheckpointLedger",
     "ClaimPostureAlertLifecycleCheckpointStatus",
+    "ClaimPostureAlertLifecycleReviewDocket",
+    "ClaimPostureAlertLifecycleReviewDocketStatus",
+    "ClaimPostureAlertLifecycleReviewPriority",
+    "ClaimPostureAlertLifecycleReviewReason",
     "ClaimPostureAlertLifecycleSnapshot",
     "ClaimPostureAlertLifecycleSnapshotStatus",
     "ClaimPostureAlertLifecycleStatus",
