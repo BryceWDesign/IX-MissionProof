@@ -1,4 +1,4 @@
-"""Bounded claims, evidence evaluation, adjudication, and temporal resolution."""
+"""Bounded claims, evidence evaluation, adjudication, and current posture."""
 
 from ix_missionproof.claims.adjudications import (
     ClaimAdjudicationDecision,
@@ -15,6 +15,12 @@ from ix_missionproof.claims.evaluations import (
 from ix_missionproof.claims.history import (
     ClaimResolutionHistory,
     ClaimResolutionHistoryEntry,
+)
+from ix_missionproof.claims.postures import (
+    ClaimPosture,
+    ClaimPostureSnapshot,
+    ClaimPostureSource,
+    ClaimPostureStatus,
 )
 from ix_missionproof.claims.resolutions import (
     ClaimAdjudicationDecisionLedger,
@@ -42,6 +48,10 @@ __all__ = [
     "ClaimEvidenceEvaluator",
     "ClaimEvidenceRequirement",
     "ClaimKind",
+    "ClaimPosture",
+    "ClaimPostureSnapshot",
+    "ClaimPostureSource",
+    "ClaimPostureStatus",
     "ClaimRequirementEvaluation",
     "ClaimRequirementEvaluationOutcome",
     "ClaimRequirementEvaluationReason",
