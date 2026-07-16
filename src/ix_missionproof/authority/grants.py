@@ -23,6 +23,8 @@ from ix_missionproof.foundation import (
     UtcTimestamp,
 )
 
+_SEPARATE_AUTHORIZATION_CONSTRAINT = "requires_separate_human_authorization"
+
 
 def _normalize_identifiers(
     values: Iterable[ScopedIdentifier],
@@ -39,6 +41,33 @@ def _normalize_identifiers(
         normalized.add(value)
 
     return tuple(sorted(normalized, key=str))
+
+
+def _bind_capability_constraints(
+    constraints: JsonObject | None,
+    *,
+    capability: CapabilityDefinition,
+) -> CanonicalJsonDocument:
+    """Bind capability-controlled terms into the immutable grant constraints."""
+
+    payload: JsonObject = dict(constraints) if constraints is not None else {}
+    required = capability.requires_separate_human_authorization
+
+    if _SEPARATE_AUTHORIZATION_CONSTRAINT in payload:
+        declared = payload[_SEPARATE_AUTHORIZATION_CONSTRAINT]
+        if not isinstance(declared, bool):
+            raise FoundationError(
+                "requires_separate_human_authorization constraint "
+                "must be a boolean"
+            )
+        if declared is not required:
+            raise FoundationError(
+                "grant constraints must not override the capability's "
+                "separate human-authorization requirement"
+            )
+
+    payload[_SEPARATE_AUTHORIZATION_CONSTRAINT] = required
+    return CanonicalJsonDocument.from_value(payload)
 
 
 @dataclass(frozen=True, slots=True)
@@ -116,7 +145,16 @@ class AuthorityGrant:
             raise FoundationError(
                 "constraints must be a CanonicalJsonDocument"
             )
-        self.constraints.require_object()
+
+        constraint_payload = self.constraints.require_object()
+        authorization_requirement = constraint_payload.get(
+            _SEPARATE_AUTHORIZATION_CONSTRAINT
+        )
+        if not isinstance(authorization_requirement, bool):
+            raise FoundationError(
+                "constraints must contain a boolean "
+                "requires_separate_human_authorization value"
+            )
 
         for field_name, digest in (
             ("capability_digest", self.capability_digest),
@@ -230,8 +268,9 @@ class AuthorityGrant:
             expires_at=expires_at,
             target_ids=normalized_targets,
             supporting_record_ids=normalized_supporting_records,
-            constraints=CanonicalJsonDocument.from_value(
-                constraints if constraints is not None else {}
+            constraints=_bind_capability_constraints(
+                constraints,
+                capability=capability,
             ),
             capability_digest=capability.digest(),
             actor_registry_digest=actor_registry.digest(),
@@ -284,7 +323,7 @@ class AuthorityGrant:
 
     @property
     def requires_runtime_authorization(self) -> bool:
-        """Return whether the grant still requires per-action human approval.
+        """Return whether each action still requires separate human approval.
 
         A standing grant never satisfies a capability's explicit requirement
         for separate runtime authorization.
@@ -294,11 +333,15 @@ class AuthorityGrant:
 
     @property
     def capability_requires_separate_authorization(self) -> bool:
-        """Return the recorded separate-authorization requirement."""
+        """Return the capability-controlled authorization requirement."""
 
         payload = self.constraints.require_object()
-        value = payload.get("requires_separate_human_authorization")
-        return value is True
+        value = payload.get(_SEPARATE_AUTHORIZATION_CONSTRAINT)
+        if not isinstance(value, bool):
+            raise FoundationError(
+                "grant constraints lost the bound authorization requirement"
+            )
+        return value
 
     def is_time_effective(self, at: UtcTimestamp) -> bool:
         """Return whether this grant is inside its declared time window."""
@@ -495,8 +538,8 @@ class AuthorityGrantLedger:
     ) -> tuple[AuthorityGrant, ...]:
         """Return time-effective grants issued to an actor.
 
-        Revocation is intentionally not evaluated here. A later revocation
-        ledger composes with this immutable grant ledger.
+        Revocation is intentionally not evaluated here. A revocation-aware
+        authority-state snapshot must be used before execution.
         """
 
         return tuple(
