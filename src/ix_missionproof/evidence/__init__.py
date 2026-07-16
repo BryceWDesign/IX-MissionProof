@@ -1,4 +1,4 @@
-"""Evidence records, admission review, and human decisions."""
+"""Evidence records, admission review, decisions, and resolution."""
 
 from ix_missionproof.evidence.admissions import (
     EvidenceAdmissionEvaluator,
@@ -20,6 +20,12 @@ from ix_missionproof.evidence.records import (
     EvidenceRecord,
     EvidenceStatus,
 )
+from ix_missionproof.evidence.resolutions import (
+    EvidenceAdmissionResolution,
+    EvidenceAdmissionResolutionSnapshot,
+    EvidenceAdmissionResolutionSource,
+    EvidenceAdmissionResolutionStatus,
+)
 
 __all__ = [
     "EvidenceAdmissionDecision",
@@ -30,6 +36,10 @@ __all__ = [
     "EvidenceAdmissionOutcome",
     "EvidenceAdmissionPolicy",
     "EvidenceAdmissionReason",
+    "EvidenceAdmissionResolution",
+    "EvidenceAdmissionResolutionSnapshot",
+    "EvidenceAdmissionResolutionSource",
+    "EvidenceAdmissionResolutionStatus",
     "EvidenceAdmissionReview",
     "EvidenceKind",
     "EvidenceLedger",
