@@ -1,5 +1,13 @@
-"""Bounded claims and falsifiable evidence obligations."""
+"""Bounded claims, evidence obligations, and evidence evaluations."""
 
+from ix_missionproof.claims.evaluations import (
+    ClaimEvidenceEvaluation,
+    ClaimEvidenceEvaluationStatus,
+    ClaimEvidenceEvaluator,
+    ClaimRequirementEvaluation,
+    ClaimRequirementEvaluationOutcome,
+    ClaimRequirementEvaluationReason,
+)
 from ix_missionproof.claims.specifications import (
     ClaimCatalog,
     ClaimCriticality,
@@ -12,8 +20,14 @@ from ix_missionproof.claims.specifications import (
 __all__ = [
     "ClaimCatalog",
     "ClaimCriticality",
+    "ClaimEvidenceEvaluation",
+    "ClaimEvidenceEvaluationStatus",
+    "ClaimEvidenceEvaluator",
     "ClaimEvidenceRequirement",
     "ClaimKind",
+    "ClaimRequirementEvaluation",
+    "ClaimRequirementEvaluationOutcome",
+    "ClaimRequirementEvaluationReason",
     "ClaimReviewLevel",
     "ClaimSpecification",
 ]
