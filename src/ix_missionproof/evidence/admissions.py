@@ -1139,7 +1139,7 @@ class EvidenceAdmissionEvaluator:
         reviewer = self.actor_registry.require_actor(
             reviewed_by_id
         )
-        self._validate_reviewer(
+        reviewer_owner_id = self._validate_reviewer(
             reviewer
         )
 
@@ -1182,7 +1182,7 @@ class EvidenceAdmissionEvaluator:
             reviewed_by_id=reviewer.actor_id,
             reviewer_kind=reviewer.kind,
             reviewer_accountability_owner_id=(
-                reviewer.accountability_owner_id
+                reviewer_owner_id
             ),
             policy_id=self.policy.policy_id,
             evidence_ledger_id=self.evidence_ledger.ledger_id,
@@ -1201,7 +1201,7 @@ class EvidenceAdmissionEvaluator:
     @staticmethod
     def _validate_reviewer(
         reviewer: ActorIdentity,
-    ) -> None:
+    ) -> ScopedIdentifier:
         if not reviewer.is_active:
             raise FoundationError(
                 "admission review requires an active reviewer"
@@ -1211,11 +1211,16 @@ class EvidenceAdmissionEvaluator:
                 "admission reviewer must be a service "
                 "or system actor"
             )
-        if reviewer.accountability_owner_id is None:
+
+        owner_id = reviewer.accountability_owner_id
+
+        if owner_id is None:
             raise FoundationError(
                 "admission reviewer must identify "
                 "an accountable human owner"
             )
+
+        return owner_id
 
     def _evaluate_record(
         self,
@@ -1428,10 +1433,16 @@ class EvidenceAdmissionEvaluator:
                 .USABLE_PRIMARY_ANCESTRY_MISSING
             )
 
-        if not reasons.intersection(
-            _EXCLUSION_REASONS
-        ) and not reasons.intersection(
-            _HUMAN_REVIEW_REASONS
+        if (
+            not reasons.intersection(
+                _EXCLUSION_REASONS
+            )
+            and not reasons.intersection(
+                _HUMAN_REVIEW_REASONS
+            )
+            and not self.policy.requires_human_review(
+                record.origin
+            )
         ):
             reasons.add(
                 EvidenceAdmissionReason
