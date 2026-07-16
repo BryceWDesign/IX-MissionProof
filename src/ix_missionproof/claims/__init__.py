@@ -87,6 +87,10 @@ from ix_missionproof.claims.review_followups import (
     ClaimPostureAlertLifecycleReviewFollowUpSnapshot,
     ClaimPostureAlertLifecycleReviewFollowUpStatus,
 )
+from ix_missionproof.claims.review_resolutions import (
+    ClaimPostureAlertLifecycleReviewResolutionSnapshot,
+    ClaimPostureAlertLifecycleReviewResolutionStatus,
+)
 from ix_missionproof.claims.review_responses import (
     ClaimPostureAlertLifecycleReviewResponse,
     ClaimPostureAlertLifecycleReviewResponseAction,
@@ -135,6 +139,8 @@ __all__ = [
     "ClaimPostureAlertLifecycleReviewFollowUpStatus",
     "ClaimPostureAlertLifecycleReviewPriority",
     "ClaimPostureAlertLifecycleReviewReason",
+    "ClaimPostureAlertLifecycleReviewResolutionSnapshot",
+    "ClaimPostureAlertLifecycleReviewResolutionStatus",
     "ClaimPostureAlertLifecycleReviewResponse",
     "ClaimPostureAlertLifecycleReviewResponseAction",
     "ClaimPostureAlertLifecycleReviewResponseLedger",
