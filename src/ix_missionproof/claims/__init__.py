@@ -1,8 +1,13 @@
-"""Bounded claims, evidence evaluation, adjudication, and current posture."""
+"""Bounded claims, adjudication, posture, and temporal change detection."""
 
 from ix_missionproof.claims.adjudications import (
     ClaimAdjudicationDecision,
     ClaimAdjudicationDecisionStatus,
+)
+from ix_missionproof.claims.deltas import (
+    ClaimPostureDelta,
+    ClaimPostureDeltaSnapshot,
+    ClaimPostureTransition,
 )
 from ix_missionproof.claims.evaluations import (
     ClaimEvidenceEvaluation,
@@ -49,9 +54,12 @@ __all__ = [
     "ClaimEvidenceRequirement",
     "ClaimKind",
     "ClaimPosture",
+    "ClaimPostureDelta",
+    "ClaimPostureDeltaSnapshot",
     "ClaimPostureSnapshot",
     "ClaimPostureSource",
     "ClaimPostureStatus",
+    "ClaimPostureTransition",
     "ClaimRequirementEvaluation",
     "ClaimRequirementEvaluationOutcome",
     "ClaimRequirementEvaluationReason",
