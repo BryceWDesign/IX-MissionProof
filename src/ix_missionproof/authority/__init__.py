@@ -6,6 +6,11 @@ from ix_missionproof.authority.capabilities import (
     CapabilityOperation,
     CapabilityRiskTier,
 )
+from ix_missionproof.authority.decisions import (
+    ActionAuthorizationDecision,
+    ActionAuthorizationDecisionLedger,
+    ActionAuthorizationDecisionStatus,
+)
 from ix_missionproof.authority.grants import (
     AuthorityGrant,
     AuthorityGrantLedger,
@@ -30,6 +35,9 @@ from ix_missionproof.authority.state import (
 )
 
 __all__ = [
+    "ActionAuthorizationDecision",
+    "ActionAuthorizationDecisionLedger",
+    "ActionAuthorizationDecisionStatus",
     "ActionAuthorizationEvaluation",
     "ActionAuthorizationEvaluator",
     "ActionAuthorizationOutcome",
