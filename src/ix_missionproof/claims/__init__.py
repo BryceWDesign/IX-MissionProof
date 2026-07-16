@@ -1,5 +1,9 @@
-"""Bounded claims, evidence obligations, and evidence evaluations."""
+"""Bounded claims, evidence evaluation, and human adjudication."""
 
+from ix_missionproof.claims.adjudications import (
+    ClaimAdjudicationDecision,
+    ClaimAdjudicationDecisionStatus,
+)
 from ix_missionproof.claims.evaluations import (
     ClaimEvidenceEvaluation,
     ClaimEvidenceEvaluationStatus,
@@ -18,6 +22,8 @@ from ix_missionproof.claims.specifications import (
 )
 
 __all__ = [
+    "ClaimAdjudicationDecision",
+    "ClaimAdjudicationDecisionStatus",
     "ClaimCatalog",
     "ClaimCriticality",
     "ClaimEvidenceEvaluation",
