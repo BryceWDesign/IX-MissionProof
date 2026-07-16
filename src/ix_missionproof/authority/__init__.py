@@ -6,8 +6,14 @@ from ix_missionproof.authority.capabilities import (
     CapabilityOperation,
     CapabilityRiskTier,
 )
+from ix_missionproof.authority.grants import (
+    AuthorityGrant,
+    AuthorityGrantLedger,
+)
 
 __all__ = [
+    "AuthorityGrant",
+    "AuthorityGrantLedger",
     "CapabilityCatalog",
     "CapabilityDefinition",
     "CapabilityOperation",
