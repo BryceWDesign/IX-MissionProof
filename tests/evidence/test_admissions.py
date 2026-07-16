@@ -11,6 +11,7 @@ from ix_missionproof.evidence import (
     EvidenceAdmissionOutcome,
     EvidenceAdmissionPolicy,
     EvidenceAdmissionReason,
+    EvidenceAdmissionReview,
     EvidenceKind,
     EvidenceLedger,
     EvidenceOrigin,
@@ -266,7 +267,7 @@ def _review(
     actors: _AdmissionActors,
     ledger: EvidenceLedger,
     policy: EvidenceAdmissionPolicy,
-):
+) -> EvidenceAdmissionReview:
     return EvidenceAdmissionEvaluator(
         actor_registry=actors.registry,
         evidence_ledger=ledger,
