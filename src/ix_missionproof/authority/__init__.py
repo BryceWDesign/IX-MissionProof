@@ -15,6 +15,10 @@ from ix_missionproof.authority.grants import (
     AuthorityGrant,
     AuthorityGrantLedger,
 )
+from ix_missionproof.authority.releases import (
+    ActionExecutionRelease,
+    ActionExecutionReleasePath,
+)
 from ix_missionproof.authority.requests import (
     ActionAuthorizationEvaluation,
     ActionAuthorizationEvaluator,
@@ -43,6 +47,8 @@ __all__ = [
     "ActionAuthorizationOutcome",
     "ActionAuthorizationReason",
     "ActionAuthorizationRequest",
+    "ActionExecutionRelease",
+    "ActionExecutionReleasePath",
     "AuthorityGrant",
     "AuthorityGrantLedger",
     "AuthorityGrantState",
