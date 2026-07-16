@@ -1,4 +1,4 @@
-"""Bounded claims, posture alerts, responses, and lifecycle continuity."""
+"""Bounded claims, posture alerts, and lifecycle continuity."""
 
 from ix_missionproof.claims.adjudications import (
     ClaimAdjudicationDecision,
@@ -10,6 +10,11 @@ from ix_missionproof.claims.alerts import (
     ClaimPostureAlertDocketStatus,
     ClaimPostureAlertReason,
     ClaimPostureAlertSeverity,
+)
+from ix_missionproof.claims.chains import (
+    ClaimPostureAlertLifecycleChain,
+    ClaimPostureAlertLifecycleChainEntry,
+    ClaimPostureAlertLifecycleChainStatus,
 )
 from ix_missionproof.claims.deltas import (
     ClaimPostureDelta,
@@ -92,6 +97,9 @@ __all__ = [
     "ClaimPostureAlertFollowUpSnapshotStatus",
     "ClaimPostureAlertFollowUpStatus",
     "ClaimPostureAlertLifecycle",
+    "ClaimPostureAlertLifecycleChain",
+    "ClaimPostureAlertLifecycleChainEntry",
+    "ClaimPostureAlertLifecycleChainStatus",
     "ClaimPostureAlertLifecycleSnapshot",
     "ClaimPostureAlertLifecycleSnapshotStatus",
     "ClaimPostureAlertLifecycleStatus",
