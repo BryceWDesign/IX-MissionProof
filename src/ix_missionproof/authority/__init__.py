@@ -10,6 +10,13 @@ from ix_missionproof.authority.grants import (
     AuthorityGrant,
     AuthorityGrantLedger,
 )
+from ix_missionproof.authority.requests import (
+    ActionAuthorizationEvaluation,
+    ActionAuthorizationEvaluator,
+    ActionAuthorizationOutcome,
+    ActionAuthorizationReason,
+    ActionAuthorizationRequest,
+)
 from ix_missionproof.authority.revocations import (
     AuthorityRevocation,
     AuthorityRevocationLedger,
@@ -23,6 +30,11 @@ from ix_missionproof.authority.state import (
 )
 
 __all__ = [
+    "ActionAuthorizationEvaluation",
+    "ActionAuthorizationEvaluator",
+    "ActionAuthorizationOutcome",
+    "ActionAuthorizationReason",
+    "ActionAuthorizationRequest",
     "AuthorityGrant",
     "AuthorityGrantLedger",
     "AuthorityGrantState",
